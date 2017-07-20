@@ -9,21 +9,27 @@ class Node{
     }
 }
 class BST{
+	//creating queue to hold Nodes 
 	static Queue q = new LinkedList();
     
     static void levelOrder(Node root){
-      //Write your code here
+     
+    	// traversing Binary tree If it is not empty
       if( root != null)
       {
           q.add(root);
+          //Process all nodes of tree
           while(q.isEmpty() != true){
               
+        	  //removing Node from head of queue 
               Node t = (Node)q.remove();
               System.out.print(t.data+ " ");
+              // queueing Left nodes first
               if(t.left!=null){
                  q.add(t.left);
 
               }
+              //queueing right node
               if(t.right!=null){
                   q.add(t.right);
 
